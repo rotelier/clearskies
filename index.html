@@ -17,6 +17,23 @@
   --bg:#0F161C;--panel:#18222B;--ink:#E5ECF2;--muted:#9AAAB8;--line:#2A3742;--field:#111A21;
   --accent:#F2B640;--accent-soft:#3A2E14;--ok:#62C392;--bad:#F08A70;color-scheme:dark}
 
+/* app only: hide the sandbox, show just the screen */
+.top,.panel,.phone-col>.hint{display:none!important}
+.wrap{padding:0;max-width:none}
+.grid{grid-template-columns:minmax(0,1fr);justify-items:center}
+.phone-col{position:static;width:100%}
+body{background:#F4F8FB}
+.phone{width:min(430px,100%);height:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));margin:0 auto;border-radius:0;padding:0;box-shadow:none;background:transparent}
+.screen{border-radius:0}
+.status{height:30px;padding:2px 22px 0}
+.status::before{display:none}
+@media (min-width:600px){
+  body{background:var(--bg)}
+  .wrap{padding-block:20px}
+  .phone{height:min(852px,calc(100dvh - 40px));border-radius:28px;box-shadow:0 20px 50px -25px rgba(20,35,50,.5)}
+  .screen{border-radius:28px}
+}
+  
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
 button{font:inherit;cursor:pointer}
